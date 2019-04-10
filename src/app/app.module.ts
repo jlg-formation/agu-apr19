@@ -9,6 +9,7 @@ import { HomeComponent } from './routes/home/home.component';
 import { ProductsComponent } from './routes/products/products.component';
 import { ServicesComponent } from './routes/services/services.component';
 import { ContactComponent } from './routes/contact/contact.component';
+import { WidgetModule } from './widget/widget.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactComponent } from './routes/contact/contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    WidgetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
