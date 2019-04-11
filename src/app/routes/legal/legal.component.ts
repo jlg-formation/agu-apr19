@@ -16,15 +16,10 @@ export class LegalComponent implements OnInit {
   obs = new ProgressPipe().transform(STR, 50);
   subject = new BehaviorSubject('');
   isVisible = false;
+  speed = 50;
 
-  myColorObs = interval(50).pipe(map(n => n % 360));
-
-  myColor = 'red';
   constructor() {
     this.obs.subscribe(this.subject);
-    this.myColorObs.subscribe(
-      n => this.myColor = `hsl(${n}, 100%, 50%)`
-    );
   }
 
   ngOnInit() {

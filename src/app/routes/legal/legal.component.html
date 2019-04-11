@@ -1,9 +1,15 @@
-<p [style.color]="myColor">
+<p appRainbow speed="23">
   {{ str }}
 </p>
-<p appRainbow>
-  {{ str }}
-</p>
+<input #range
+type="range"
+min="10"
+max="500"
+[value]="speed"
+step="10"
+(change)="speed=range.value"><br>
+<br>
+<span>speed= {{ speed }}</span>
 <!-- <button (click)="toggle()">{{ isVisible ? 'Hide' : 'Show'}}</button>
 <p *ngIf="isVisible">
   {{subject | async}}&nbsp;
