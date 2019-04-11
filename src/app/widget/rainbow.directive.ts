@@ -13,12 +13,14 @@ export class RainbowDirective {
     if (this.s) {
       this.s.unsubscribe();
     }
-    const myColorObs = interval(val).pipe(map(n => n % 360));
+    const myColorObs = interval(val).pipe(
+      map(n => n % 360),
+      map(n => `hsl(${n}, 100%, 50%)`));
 
     this.s = myColorObs.subscribe(
-      n => this.el.nativeElement.style.color = `hsl(${n}, 100%, 50%)`
+      n => this.el.nativeElement.style.color = n
     );
-   }
+  }
 
   constructor(private el: ElementRef) {
   }

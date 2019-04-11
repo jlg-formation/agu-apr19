@@ -1,15 +1,11 @@
-<p appRainbow [speed]="speed">
-  {{ str }}
-</p>
-<input #range
-type="range"
-min="10"
-max="500"
-[value]="speed"
-step="10"
-(change)="speed=range.value"><br>
-<br>
-<span>speed= {{ speed }}</span>
+<div>
+  <p appRainbow [speed]="speed">
+    {{ str }}
+  </p>
+  <input #range type="range" min="10" max="500" [value]="speed" step="10" (change)="speed=range.value"><br>
+  <br>
+  <span>speed= {{ speed }}</span>
+</div>
 <!-- <button (click)="toggle()">{{ isVisible ? 'Hide' : 'Show'}}</button>
 <p *ngIf="isVisible">
   {{subject | async}}&nbsp;
@@ -17,3 +13,4 @@ step="10"
 <p *ngIf="isVisible">
   {{obs | async}}&nbsp;
 </p> -->
+
