@@ -1,10 +1,13 @@
-<p>
-  {{subject | async}}&nbsp;
+<p [style.color]="myColor">
+  {{ str }}
 </p>
-<button (click)="toggle()">{{ isVisible ? 'Hide' : 'Show'}}</button>
+<p appRainbow>
+  {{ str }}
+</p>
+<!-- <button (click)="toggle()">{{ isVisible ? 'Hide' : 'Show'}}</button>
 <p *ngIf="isVisible">
   {{subject | async}}&nbsp;
 </p>
 <p *ngIf="isVisible">
   {{obs | async}}&nbsp;
-</p>
+</p> -->
