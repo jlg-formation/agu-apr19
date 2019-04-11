@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgressPipe } from 'src/app/widget/progress.pipe';
+import { BehaviorSubject } from 'rxjs';
+
+const STR = 'orsys is a very good company for doing training in Angular';
 
 @Component({
   selector: 'app-legal',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LegalComponent implements OnInit {
 
-  constructor() { }
+  obs = new ProgressPipe().transform(STR, 50);
+  subject = new BehaviorSubject('');
+  isVisible = false;
+  constructor() {
+    this.obs.subscribe(this.subject);
+  }
 
   ngOnInit() {
   }
 
+  toggle() {
+    this.isVisible = !this.isVisible;
+  }
 }

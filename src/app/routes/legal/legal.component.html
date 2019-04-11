@@ -1,3 +1,10 @@
 <p>
-  legal works!
+  {{subject | async}}&nbsp;
+</p>
+<button (click)="toggle()">{{ isVisible ? 'Hide' : 'Show'}}</button>
+<p *ngIf="isVisible">
+  {{subject | async}}&nbsp;
+</p>
+<p *ngIf="isVisible">
+  {{obs | async}}&nbsp;
 </p>
