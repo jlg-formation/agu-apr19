@@ -5,8 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProgressPipe } from './progress.pipe';
 import { RainbowDirective } from './rainbow.directive';
 import { MaterialFormComponent } from './material-form/material-form.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { AppMaterialModule } from '../app-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -14,11 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
     ReactiveFormsModule,
+    AppMaterialModule
   ],
   exports: [PasswordComponent, ProgressPipe, RainbowDirective, MaterialFormComponent]
 })
