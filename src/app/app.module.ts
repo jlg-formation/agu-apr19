@@ -11,6 +11,7 @@ import { ProductsComponent } from './routes/products/products.component';
 import { ServicesComponent } from './routes/services/services.component';
 import { ContactComponent } from './routes/contact/contact.component';
 import { WidgetModule } from './widget/widget.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { WidgetModule } from './widget/widget.module';
     AppRoutingModule,
     LayoutModule,
     WidgetModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

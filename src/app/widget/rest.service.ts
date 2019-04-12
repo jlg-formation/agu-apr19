@@ -10,9 +10,7 @@ const log = (response: RestResponse): RestResponse => {
   return response;
 };
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RestService {
 
   baseUrl: string;
