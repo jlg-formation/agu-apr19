@@ -1,6 +1,13 @@
 <div>
+  <button (click)="create()">create</button>
   <button (click)="deleteAll()">delete all</button>
-  <button>resfresh</button>
+  <button (click)="refresh()">refresh</button>
+</div>
+<div>
+  <input type="text" [formControl]="name">
+  <input type="text" [formControl]="age">
+  {{name.value}}
+  {{age.value}}
 </div>
 <table>
   <tr>
