@@ -8,29 +8,9 @@
     <th>Nom</th>
     <th>Age</th>
   </tr>
-  <tr>
+  <tr *ngFor="let cat of cats">
     <td></td>
-    <td>Titi</td>
-    <td>2 mois</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Titi</td>
-    <td>2 mois</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Titi</td>
-    <td>2 mois</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Titi</td>
-    <td>2 mois</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Titi</td>
-    <td>2 mois</td>
+    <td> {{ cat.name }}</td>
+    <td>{{ cat.age }} </td>
   </tr>
 </table>

@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
+  cats = [
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+    { id: 1, name: 'Titi', age: '2 mois'},
+  ];
   constructor() { }
 
   ngOnInit() {
