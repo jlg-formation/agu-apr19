@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEye as farEye } from '@fortawesome/free-regular-svg-icons';
+import { AbstractValueAccessor, MakeProvider } from '../AbstractValueAccessor';
 
 @Component({
   selector: 'app-password',
   templateUrl: './password.component.html',
-  styleUrls: ['./password.component.scss']
+  styleUrls: ['./password.component.scss'],
+  providers: [MakeProvider(PasswordComponent)],
+
 })
-export class PasswordComponent implements OnInit {
+export class PasswordComponent extends AbstractValueAccessor implements OnInit {
 
   inputType = 'password';
   faEye = faEye;
-
-  constructor() { }
 
   ngOnInit() {
   }

@@ -11,7 +11,7 @@ const STR = 'orsys is a very good company for doing training in Angular';
   templateUrl: './legal.component.html',
   styleUrls: ['./legal.component.scss']
 })
-export class LegalComponent implements OnInit {
+export class LegalComponent {
   str = STR;
   obs = new ProgressPipe().transform(STR, 50);
   subject = new BehaviorSubject('');
