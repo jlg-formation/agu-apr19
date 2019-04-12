@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-material-form',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialFormComponent implements OnInit {
 
-  constructor() { }
+  f = new FormGroup({
+    login: new FormControl('Yosra', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  });
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log('submitted');
   }
 
 }

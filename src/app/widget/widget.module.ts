@@ -7,6 +7,7 @@ import { RainbowDirective } from './rainbow.directive';
 import { MaterialFormComponent } from './material-form/material-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PasswordComponent, ProgressPipe, RainbowDirective, MaterialFormComponent],
@@ -16,7 +17,8 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/ma
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   exports: [PasswordComponent, ProgressPipe, RainbowDirective, MaterialFormComponent]
 })

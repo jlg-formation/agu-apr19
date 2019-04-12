@@ -1,9 +1,10 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="f">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
+    <input matInput placeholder="Login" formControlName="login">
   </mat-form-field>
-
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
+    <input matInput type="password" placeholder="Password" value="" formControlName="password">
   </mat-form-field>
+  <button mat-raised-button color="primary">Submit</button>
 </form>
+fields = {{f.value | json}}
