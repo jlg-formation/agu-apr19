@@ -36,6 +36,20 @@ export class ProductsComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.retrieveAllCats();
+  }
+
+  deleteAll(): void {
+    this.rest.deleteAll('cat').then(response => {
+      this.refresh();
+    });
+  }
+
+  refresh(): void {
+    this.retrieveAllCats();
+  }
+
+  retrieveAllCats() {
     this.rest.retrieveAll('cat').then( response => {
       this.cats = response.content as Cat[];
     });
