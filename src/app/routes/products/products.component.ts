@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/widget/rest.service';
 import { FormControl } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 interface Cat {
   id: number;
@@ -16,52 +17,38 @@ interface Cat {
 })
 export class ProductsComponent implements OnInit {
 
+  isBusy = false;
   name = new FormControl('titi');
   age = new FormControl('3 mois');
 
-  cats: Cat[] = [
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-    { id: 1, name: 'Titi', age: '2 mois' },
-  ];
+  cats: Cat[] = [];
   constructor(private rest: RestService) {
-    this.rest.baseUrl = 'http://localhost:8080/ws';
+    console.log('qsdf')
+    this.rest.baseUrl = environment.url;
   }
 
   ngOnInit() {
-    this.retrieveAllCats();
+    this.refresh();
   }
 
-  deleteAll(): void {
-    this.rest.deleteAll('cat').then(response => {
-      this.refresh();
+  deleteAll(): Promise<void> {
+    this.isBusy = true;
+    return this.rest.deleteAll('cat').then(response => {
+      return this.refresh();
     });
   }
 
-  refresh(): void {
-    this.retrieveAllCats();
-  }
-
   create(): void {
+    this.isBusy = true;
     this.rest.create('cat', { name: this.name.value, age: this.age.value })
       .then(r => this.refresh());
   }
 
-  retrieveAllCats() {
-    this.rest.retrieveAll('cat').then(response => {
+  refresh(): Promise<void> {
+    this.isBusy = true;
+    return this.rest.retrieveAll('cat').then(response => {
       this.cats = response.content as Cat[];
-    });
+    }).finally(() => this.isBusy = false);
   }
 
 }

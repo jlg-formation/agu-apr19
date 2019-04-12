@@ -1,7 +1,7 @@
 <div>
-  <button (click)="create()">create</button>
-  <button (click)="deleteAll()">delete all</button>
-  <button (click)="refresh()">refresh</button>
+  <button (click)="create()" [disabled]="isBusy">create</button>
+  <button (click)="deleteAll()" [disabled]="isBusy">delete all</button>
+  <button (click)="refresh()" [disabled]="isBusy">refresh</button>
 </div>
 <div>
   <input type="text" [formControl]="name">
